@@ -27,4 +27,5 @@ Route::get('product',[ProductController::class,"showData"]);
 Route::get('detail/{id}',[ProductController::class,"showProduct"]);
 Route::get('edit/{id}',[ProductController::class,"showEdit"]);
 Route::put('update',[ProductController::class,"updateProduct"])->name('update');
+Route::get('delete/{id}',[ProductController::class,"delete"]);
 

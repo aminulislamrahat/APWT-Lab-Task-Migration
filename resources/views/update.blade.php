@@ -61,6 +61,19 @@
         </tr>
 
         <tr>
+            <td><label for="created_at">Product purchased : </label></td>
+            <td>{{ $info['created_at'] }}</td>
+            <td><input type="hidden" name="created_at" value={{ $info['created_at'] }} id="created_at"></td>
+        </tr>
+        <tr>
+            <td><label for="updated_at">Product purchased : </label></td>
+            <td>{{ $info['updated_at'] }}</td>
+            <td><input type="hidden" name="updated_at" value={{ $info['updated_at'] }} id="updated_at"></td>
+        </tr>
+
+
+
+        <tr>
             <td></td>
             <td></td>
             <td><button type="submit" > Update </button></td>

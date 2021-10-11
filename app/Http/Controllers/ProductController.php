@@ -74,16 +74,7 @@ class ProductController extends Controller
 
         ]);
 
-        /*
-        echo $req->p_name;
-        echo $req->p_code;
-        echo $req->p_desc;
-        echo $req->p_category;
-        echo $req->p_price;
-        echo $req->p_quantity;
-        echo $req->p_stock_date;
-        echo $req->p_rating;
-        echo $req->p_purchased;*/
+
 
         $product->p_name = $req->p_name;
         $product->p_code = $req->p_code;
@@ -94,11 +85,20 @@ class ProductController extends Controller
         $product->p_stock_date = $req->p_stock_date;
         $product->p_rating = $req->p_rating;
         $product->p_purchased = $req->p_purchased;
+        $product->created_at = $product->created_at;
+        $product->updated_at = date('Y-m-d H:i:s');
         $product->save();
 
         $data = $product->p_name;
         $req->session()->flash('product',$data);
-        return redirect ('add');
+        return redirect ('product');
+    }
+
+    function delete($id)
+    {
+        $data = Product::find($id);
+        $data->delete();
+        return redirect ('product');
     }
 
 

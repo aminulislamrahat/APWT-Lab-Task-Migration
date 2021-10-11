@@ -1,5 +1,10 @@
 <h1>Products List</h1>
 @include("navbar")
+
+@if(session('product'))
+    <h3 style="color:rgb(34, 192, 34)">{{ session('product') }} has saved in Product List . Please enter another product</h3>
+@endif
+
 <table border="1">
     <tr>
         <td>Id</td>
